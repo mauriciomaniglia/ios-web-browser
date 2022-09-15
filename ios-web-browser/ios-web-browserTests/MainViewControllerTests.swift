@@ -1,10 +1,3 @@
-//
-//  MainViewControllerTests.swift
-//  ios-web-browserTests
-//
-//  Created by Mauricio Cesar on 15/09/22.
-//
-
 import XCTest
 import ios_web_browser
 

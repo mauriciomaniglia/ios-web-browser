@@ -1,10 +1,3 @@
-//
-//  ios_web_browserUITests.swift
-//  ios-web-browserUITests
-//
-//  Created by Mauricio Cesar on 05/09/22.
-//
-
 import XCTest
 
 class ios_web_browserUITests: XCTestCase {

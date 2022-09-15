@@ -1,10 +1,3 @@
-//
-//  MainViewController.swift
-//  ios-web-browser
-//
-//  Created by Mauricio Cesar on 05/09/22.
-//
-
 import UIKit
 import WebKit
 
