@@ -22,8 +22,7 @@ public class MainViewController: UIViewController {
         
         view.addSubview(searchBar)
         view.addSubview(webView)
-        
-        webView.uiDelegate = self
+
         searchBar.delegate = self
         
         view.backgroundColor = .white
@@ -48,10 +47,6 @@ public class MainViewController: UIViewController {
             webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-}
-
-extension MainViewController: WKUIDelegate {
-    
 }
 
 extension MainViewController: UITextFieldDelegate {
