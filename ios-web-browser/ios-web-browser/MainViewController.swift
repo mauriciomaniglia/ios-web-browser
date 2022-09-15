@@ -8,7 +8,13 @@
 import UIKit
 import WebKit
 
-class MainViewController: UIViewController {
+public protocol MainViewControllerDelegate {
+    func sendText(_ text: String)
+}
+
+public class MainViewController: UIViewController {
+    public var delegate: MainViewControllerDelegate?
+
     let webView = WKWebView()
     
     let searchBar: UITextField = {
@@ -17,8 +23,8 @@ class MainViewController: UIViewController {
         textfield.backgroundColor = .blue
         return textfield
     }()
-
-    override func viewDidLoad() {
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(searchBar)
@@ -56,12 +62,9 @@ extension MainViewController: WKUIDelegate {
 }
 
 extension MainViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        let myURL = URL(string:"http:tesla.com")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
-        
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return false }
+        delegate?.sendText(text)
         return true
     }
 }
