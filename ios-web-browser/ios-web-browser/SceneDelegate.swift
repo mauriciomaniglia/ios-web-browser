@@ -1,9 +1,9 @@
 import UIKit
+import core_web_browser
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
+    var mainController: MainViewController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -14,6 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
+        
+        mainController = mainViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}
@@ -29,7 +31,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: MainViewControllerDelegate {
     func sendText(_ text: String) {
-        
+        if let url = URIFixup.getURL(text) {
+            mainController?.webView.load(URLRequest(url: url))
+        }
     }
 }
 

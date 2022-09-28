@@ -13,7 +13,6 @@ public class MainViewController: UIViewController {
     let searchBar: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = "type something here"
-        textfield.backgroundColor = .blue
         return textfield
     }()
     
@@ -36,7 +35,7 @@ public class MainViewController: UIViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 50.0),
