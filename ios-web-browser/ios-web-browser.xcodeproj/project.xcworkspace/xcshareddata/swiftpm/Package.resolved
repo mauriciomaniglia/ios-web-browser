@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "core-web-browser",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:mauriciomaniglia/core-web-browser.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8b54cb5e21b84e951e825842d52518dd4adcf7f6"
+      }
+    }
+  ],
+  "version" : 2
+}
