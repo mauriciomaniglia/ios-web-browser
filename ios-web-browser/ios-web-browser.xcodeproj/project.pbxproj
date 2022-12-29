@@ -48,6 +48,7 @@
 		F91E694C28C6B61700E27F5A /* ios_web_browserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_web_browserUITests.swift; sourceTree = "<group>"; };
 		F91E694E28C6B61700E27F5A /* ios_web_browserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_web_browserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F991909B28D3546D0001E6B7 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		F9EE8DD628FF89FE009FFEE7 /* core-web-browser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "core-web-browser"; path = "../../core-web-browser"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		F91E691F28C6B61500E27F5A = {
 			isa = PBXGroup;
 			children = (
+				F9EE8DD628FF89FE009FFEE7 /* core-web-browser */,
 				F91E692A28C6B61500E27F5A /* ios-web-browser */,
 				F91E694128C6B61700E27F5A /* ios-web-browserTests */,
 				F91E694B28C6B61700E27F5A /* ios-web-browserUITests */,
