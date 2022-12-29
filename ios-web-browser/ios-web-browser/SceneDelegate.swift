@@ -33,6 +33,8 @@ extension SceneDelegate: MainViewControllerDelegate {
     func sendText(_ text: String) {
         if let url = URIFixup.getURL(text) {
             mainController?.webView.load(URLRequest(url: url))
+        }  else {
+            mainController?.webView.load(URLRequest(url: SearchURLBuilder.makeURL(from: text)))
         }
     }
 }
