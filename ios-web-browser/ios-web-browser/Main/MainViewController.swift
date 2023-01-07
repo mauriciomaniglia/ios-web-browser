@@ -18,7 +18,7 @@ public class MainViewController: UIViewController {
     }
 
     private func setupView() {
-        mainView.searchBar.delegate = self
+        mainView.searchBar.searchBar.delegate = self
         view = mainView
     }
 }
