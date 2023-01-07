@@ -18,6 +18,7 @@ public class MainViewController: UIViewController {
     }
 
     private func setupView() {
+        navigationController?.navigationBar.isHidden = true
         mainView.searchBar.searchBar.delegate = self
         view = mainView
     }
@@ -26,6 +27,7 @@ public class MainViewController: UIViewController {
 extension MainViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return false }
+        mainView.webView.isHidden = false
         delegate?.sendText(text)
         return true
     }
