@@ -79,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F917D1FD2969B7B300123CE7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F91E692F28C6B61500E27F5A /* MainViewController.swift */,
+				F96D12C62969B012007CA99F /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		F91E691F28C6B61500E27F5A = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +112,11 @@
 		F91E692A28C6B61500E27F5A /* ios-web-browser */ = {
 			isa = PBXGroup;
 			children = (
+				F917D1FD2969B7B300123CE7 /* Main */,
 				F972BCBD28D13C8500DEFDDF /* Resources */,
 				F91E692B28C6B61500E27F5A /* AppDelegate.swift */,
 				F91E692D28C6B61500E27F5A /* SceneDelegate.swift */,
-				F91E692F28C6B61500E27F5A /* MainViewController.swift */,
 				F91E693928C6B61700E27F5A /* Info.plist */,
-				F96D12C62969B012007CA99F /* MainView.swift */,
 			);
 			path = "ios-web-browser";
 			sourceTree = "<group>";
