@@ -1,10 +1,16 @@
 import UIKit
 import WebKit
 
-final class MainView: UIView {
-    let searchBar = SearchBarView()
+public protocol MainViewProtocol {
+    func sendText(_ text: String)
+}
 
-    let webView: WKWebView = {
+public final class MainView: UIView {
+    public var delegate: MainViewProtocol?
+
+    internal let searchBar = SearchBarView()
+
+    internal let webView: WKWebView = {
         let webView = WKWebView()
         webView.isHidden = true
         return webView
@@ -16,6 +22,8 @@ final class MainView: UIView {
     }
 
     private func setupView() {
+        searchBar.searchBar.delegate = self
+
         addSubview(searchBar)
         addSubview(webView)
         backgroundColor = .systemGray4
@@ -37,5 +45,13 @@ final class MainView: UIView {
             webView.trailingAnchor.constraint(equalTo: trailingAnchor),
             webView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+}
+
+extension MainView: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return false }
+        delegate?.sendText(text)
+        return true
     }
 }

@@ -1,10 +1,10 @@
 import XCTest
 import ios_web_browser
 
-class MainViewControllerTests: XCTestCase {
+class MainViewTests: XCTestCase {
     func test_textFieldShouldReturn_sendsText() {
-        let delegate = MainViewControllerDelegateSpy()
-        let sut = MainViewController()
+        let delegate = MainViewDelegateSpy()
+        let sut = MainView()
         sut.delegate = delegate
                 
         let textField = UITextField()
@@ -17,7 +17,7 @@ class MainViewControllerTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private class MainViewControllerDelegateSpy: MainViewControllerContract {
+    private class MainViewDelegateSpy: MainViewProtocol {
         enum Message: Equatable {
             case sendText(_ text: String)
         }

@@ -3,12 +3,11 @@ import UIKit
 final class MainComposer {
     static func makeScreen() -> UIViewController {
         let mainView = MainView()
-        let mainViewController = MainViewController()
-        let mainViewControllerDelegate = MainViewControllerDelegate(webView: mainView.webView)
+        let mainViewController = UIViewController()
+        let mainViewDelegate = MainViewDelegate(webView: mainView.webView)
 
         mainViewController.view = mainView
-        mainViewController.delegate = mainViewControllerDelegate
-        mainView.searchBar.searchBar.delegate = mainViewController
+        mainView.delegate = mainViewDelegate
 
         return mainViewController
     }

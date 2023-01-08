@@ -1,7 +1,7 @@
 import WebKit
 import core_web_browser
 
-final class MainViewControllerDelegate: MainViewControllerContract {
+final class MainViewDelegate: MainViewProtocol {
     let webView: WKWebView
 
     init(webView: WKWebView) {
