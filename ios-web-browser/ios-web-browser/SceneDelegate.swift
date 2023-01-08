@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
-extension SceneDelegate: MainViewControllerDelegate {
+extension SceneDelegate: MainViewControllerContract {
     func sendText(_ text: String) {
         if let url = URIFixup.getURL(text) {
             mainController?.loadWebView(with: URLRequest(url: url))

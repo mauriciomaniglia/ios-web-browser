@@ -1,11 +1,11 @@
 import UIKit
 
-public protocol MainViewControllerDelegate {
+public protocol MainViewControllerContract {
     func sendText(_ text: String)
 }
 
 public class MainViewController: UIViewController {
-    public var delegate: MainViewControllerDelegate?
+    public var delegate: MainViewControllerContract?
     private let mainView = MainView()
 
     public override func viewDidLoad() {

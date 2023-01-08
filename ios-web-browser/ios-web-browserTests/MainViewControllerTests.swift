@@ -17,7 +17,7 @@ class MainViewControllerTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private class MainViewControllerDelegateSpy: MainViewControllerDelegate {
+    private class MainViewControllerDelegateSpy: MainViewControllerContract {
         enum Message: Equatable {
             case sendText(_ text: String)
         }
