@@ -3,9 +3,9 @@ Web browser for iOS
 
 ## TODO
 
-- Search bar
+- Search bar ✅
+- Implement navigation (back / forward) 🔨
 - Reload Page
-- Implement navigation (back / forward)
 - Long-press (navigation)
 - Autocomplete suggestions
 - Check Site Protection
