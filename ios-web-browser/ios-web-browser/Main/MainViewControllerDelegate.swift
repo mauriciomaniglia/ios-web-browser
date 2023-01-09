@@ -10,12 +10,7 @@ final class MainViewDelegate: MainViewProtocol {
 
     func sendText(_ text: String) {
         webView.isHidden = false
-
-        if let url = URIFixup.getURL(text) {            
-            webView.load(URLRequest(url: url))
-        }  else {
-            webView.load(URLRequest(url: SearchURLBuilder.makeURL(from: text)))
-        }
+        webView.load(URLRequest(url: SearchURLBuilder.makeURL(from: text)))
     }
 
     func didTapBackButton() {
