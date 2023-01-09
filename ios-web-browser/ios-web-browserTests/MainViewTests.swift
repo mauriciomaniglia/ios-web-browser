@@ -20,12 +20,22 @@ class MainViewTests: XCTestCase {
     private class MainViewDelegateSpy: MainViewProtocol {
         enum Message: Equatable {
             case sendText(_ text: String)
+            case didTapBackButton
+            case didTapForwardButton
         }
 
         var receivedMessages = [Message]()
-        
+
         func sendText(_ text: String) {
             receivedMessages.append(.sendText(text))
+        }
+
+        func didTapBackButton() {
+            receivedMessages.append(.didTapBackButton)
+        }
+
+        func didTapForwardButton() {
+            receivedMessages.append(.didTapForwardButton)
         }
     }
 }

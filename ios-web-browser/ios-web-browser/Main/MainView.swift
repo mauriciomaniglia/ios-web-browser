@@ -3,6 +3,8 @@ import WebKit
 
 public protocol MainViewProtocol {
     func sendText(_ text: String)
+    func didTapBackButton()
+    func didTapForwardButton()
 }
 
 public final class MainView: UIView {
@@ -25,6 +27,8 @@ public final class MainView: UIView {
 
     private func setupView() {
         searchBar.searchBar.delegate = self
+        bottomNavigationView.backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        bottomNavigationView.forwardButton.addTarget(self, action: #selector(didTapForwardButton), for: .touchUpInside)
 
         addSubview(searchBar)
         addSubview(webView)
@@ -55,6 +59,14 @@ public final class MainView: UIView {
             bottomNavigationView.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomNavigationView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
+    }
+
+    @objc private func didTapBackButton() {
+        delegate?.didTapBackButton()
+    }
+
+    @objc private func didTapForwardButton() {
+        delegate?.didTapForwardButton()
     }
 }
 

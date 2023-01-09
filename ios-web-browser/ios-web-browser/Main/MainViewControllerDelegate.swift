@@ -17,4 +17,12 @@ final class MainViewDelegate: MainViewProtocol {
             webView.load(URLRequest(url: SearchURLBuilder.makeURL(from: text)))
         }
     }
+
+    func didTapBackButton() {
+        webView.goBack()
+    }
+
+    func didTapForwardButton() {
+        webView.goForward()
+    }
 }
