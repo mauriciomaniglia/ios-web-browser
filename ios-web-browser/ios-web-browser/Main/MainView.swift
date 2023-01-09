@@ -16,6 +16,8 @@ public final class MainView: UIView {
         return webView
     }()
 
+    internal let bottomNavigationView = BottomNavigationView()
+
     convenience init() {
         self.init(frame: .zero)        
         setupView()
@@ -26,6 +28,8 @@ public final class MainView: UIView {
 
         addSubview(searchBar)
         addSubview(webView)
+        addSubview(bottomNavigationView)
+
         backgroundColor = .systemGray4
         setupConstraints()
     }
@@ -33,6 +37,7 @@ public final class MainView: UIView {
     private func setupConstraints() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         webView.translatesAutoresizingMaskIntoConstraints = false
+        bottomNavigationView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: topAnchor, constant: 70),
@@ -43,7 +48,12 @@ public final class MainView: UIView {
             webView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
             webView.leadingAnchor.constraint(equalTo: leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            webView.bottomAnchor.constraint(equalTo: bottomAnchor)
+
+            bottomNavigationView.topAnchor.constraint(equalTo: webView.bottomAnchor, constant: 10),
+            bottomNavigationView.heightAnchor.constraint(equalToConstant: 70),
+            bottomNavigationView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bottomNavigationView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bottomNavigationView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }

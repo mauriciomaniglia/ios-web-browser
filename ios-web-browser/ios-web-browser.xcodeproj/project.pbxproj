@@ -19,6 +19,7 @@
 		F991909C28D3546D0001E6B7 /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F991909B28D3546D0001E6B7 /* MainViewTests.swift */; };
 		F9A21D13296B0AA9003237E5 /* MainComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A21D12296B0AA9003237E5 /* MainComposer.swift */; };
 		F9A21D15296B0B54003237E5 /* MainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A21D14296B0B54003237E5 /* MainViewControllerDelegate.swift */; };
+		F9A21D17296B968C003237E5 /* BottomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A21D16296B968C003237E5 /* BottomNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		F991909B28D3546D0001E6B7 /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
 		F9A21D12296B0AA9003237E5 /* MainComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComposer.swift; sourceTree = "<group>"; };
 		F9A21D14296B0B54003237E5 /* MainViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F9A21D16296B968C003237E5 /* BottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationView.swift; sourceTree = "<group>"; };
 		F9EE8DD628FF89FE009FFEE7 /* core-web-browser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "core-web-browser"; path = "../../core-web-browser"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				F917D1FE2969B86700123CE7 /* SearchBarView.swift */,
 				F9A21D12296B0AA9003237E5 /* MainComposer.swift */,
 				F9A21D14296B0B54003237E5 /* MainViewControllerDelegate.swift */,
+				F9A21D16296B968C003237E5 /* BottomNavigationView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			files = (
 				F917D1FF2969B86700123CE7 /* SearchBarView.swift in Sources */,
 				F96D12C72969B012007CA99F /* MainView.swift in Sources */,
+				F9A21D17296B968C003237E5 /* BottomNavigationView.swift in Sources */,
 				F91E692C28C6B61500E27F5A /* AppDelegate.swift in Sources */,
 				F9A21D15296B0B54003237E5 /* MainViewControllerDelegate.swift in Sources */,
 				F9A21D13296B0AA9003237E5 /* MainComposer.swift in Sources */,
