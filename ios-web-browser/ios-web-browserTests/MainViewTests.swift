@@ -14,6 +14,19 @@ class MainViewTests: XCTestCase {
         
         XCTAssertEqual(delegate.receivedMessages, [.sendText("http://some-website.com")])
     }
+
+    func test_textFieldShouldReturn_whenTextIsEmptyDoNotSendText() {
+        let delegate = MainViewDelegateSpy()
+        let sut = MainView()
+        sut.delegate = delegate
+
+        let textField = UITextField()
+        textField.text = ""
+
+        _ = sut.textFieldShouldReturn(textField)
+
+        XCTAssertEqual(delegate.receivedMessages, [])
+    }
     
     // MARK: - Helpers
     

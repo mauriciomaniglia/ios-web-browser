@@ -74,7 +74,7 @@ public final class MainView: UIView {
 
 extension MainView: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let text = textField.text else { return false }
+        guard let text = textField.text, !text.isEmpty else { return false }
         delegate?.sendText(text)
         return true
     }
