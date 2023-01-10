@@ -22,9 +22,15 @@ final class BottomNavigationView: UIView {
     private func setupView() {
         backButton.setImage(.init(systemName: "arrow.left"), for: .normal)
         forwardButton.setImage(.init(systemName: "arrow.right"), for: .normal)
-        searchButton.setImage(.init(systemName: "plus"), for: .normal)
+        searchButton.setImage(.init(systemName: "magnifyingglass"), for: .normal)
         newTabButton.setImage(.init(systemName: "plus"), for: .normal)
-        settingsButton.setImage(.init(systemName: "plus"), for: .normal)
+        settingsButton.setImage(.init(systemName: "ellipsis"), for: .normal)
+
+        backButton.tintColor = .label
+        forwardButton.tintColor = .label
+        searchButton.tintColor = .label
+        newTabButton.tintColor = .label
+        settingsButton.tintColor = .label
 
         addSubview(buttonsStackView)
 
