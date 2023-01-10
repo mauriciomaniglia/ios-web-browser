@@ -11,13 +11,7 @@ public final class MainView: UIView {
     public var delegate: MainViewProtocol?
 
     internal let searchBar = SearchBarView()
-
-    internal let webView: WKWebView = {
-        let webView = WKWebView()
-        webView.isHidden = true
-        return webView
-    }()
-
+    internal let webView = WKWebView()
     internal let bottomNavigationView = BottomNavigationView()
 
     convenience init() {
@@ -41,6 +35,8 @@ public final class MainView: UIView {
         addSubview(bottomNavigationView)
 
         backgroundColor = .systemGray4
+        webView.isHidden = true
+
         setupConstraints()
     }
 
