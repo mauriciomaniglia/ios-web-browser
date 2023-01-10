@@ -1,11 +1,18 @@
 import WebKit
 import core_web_browser
 
-final class WebViewProxy: MainViewProtocol {
+protocol WebViewProxyProtocol {
+    func didLoadPage()
+}
+
+final class WebViewProxy: NSObject {
     let webView: WKWebView
+    var delegate: WebViewProxyProtocol?
 
     init(webView: WKWebView) {
         self.webView = webView
+        super.init()
+        self.webView.navigationDelegate = self
     }
 
     func sendText(_ text: String) {
@@ -27,5 +34,11 @@ final class WebViewProxy: MainViewProtocol {
 
     func canGoForward() -> Bool {
         webView.canGoForward
+    }
+}
+
+extension WebViewProxy: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        delegate?.didLoadPage()
     }
 }
