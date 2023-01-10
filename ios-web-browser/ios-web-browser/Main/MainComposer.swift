@@ -4,10 +4,12 @@ final class MainComposer {
     static func makeScreen() -> UIViewController {
         let mainView = MainView()
         let mainViewController = UIViewController()
-        let mainViewDelegate = WebViewProxy(webView: mainView.webView)
+        let webViewProxy = WebViewProxy(webView: mainView.webView)
+        let mainViewAdapter = MainViewAdapter(webViewProxy: webViewProxy, mainView: mainView)
 
         mainViewController.view = mainView
-        mainView.delegate = mainViewDelegate
+        mainView.delegate = mainViewAdapter
+        webViewProxy.delegate = mainViewAdapter
 
         return mainViewController
     }

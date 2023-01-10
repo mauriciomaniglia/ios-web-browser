@@ -15,6 +15,7 @@
 		F91E694D28C6B61700E27F5A /* ios_web_browserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E694C28C6B61700E27F5A /* ios_web_browserUITests.swift */; };
 		F91E694F28C6B61700E27F5A /* ios_web_browserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E694E28C6B61700E27F5A /* ios_web_browserUITestsLaunchTests.swift */; };
 		F95EC1C728E51187000AED28 /* core-web-browser in Frameworks */ = {isa = PBXBuildFile; productRef = F95EC1C628E51187000AED28 /* core-web-browser */; };
+		F969A8DB296CEF1400A33E63 /* MainViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F969A8DA296CEF1400A33E63 /* MainViewAdapter.swift */; };
 		F96D12C72969B012007CA99F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D12C62969B012007CA99F /* MainView.swift */; };
 		F991909C28D3546D0001E6B7 /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F991909B28D3546D0001E6B7 /* MainViewTests.swift */; };
 		F9A21D13296B0AA9003237E5 /* MainComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A21D12296B0AA9003237E5 /* MainComposer.swift */; };
@@ -51,6 +52,7 @@
 		F91E694828C6B61700E27F5A /* ios-web-browserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-web-browserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91E694C28C6B61700E27F5A /* ios_web_browserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_web_browserUITests.swift; sourceTree = "<group>"; };
 		F91E694E28C6B61700E27F5A /* ios_web_browserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_web_browserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F969A8DA296CEF1400A33E63 /* MainViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewAdapter.swift; sourceTree = "<group>"; };
 		F96D12C62969B012007CA99F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F991909B28D3546D0001E6B7 /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
 		F9A21D12296B0AA9003237E5 /* MainComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComposer.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				F9A21D12296B0AA9003237E5 /* MainComposer.swift */,
 				F9A21D14296B0B54003237E5 /* WebViewProxy.swift */,
 				F9A21D16296B968C003237E5 /* BottomNavigationView.swift */,
+				F969A8DA296CEF1400A33E63 /* MainViewAdapter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F917D1FF2969B86700123CE7 /* SearchBarView.swift in Sources */,
+				F969A8DB296CEF1400A33E63 /* MainViewAdapter.swift in Sources */,
 				F96D12C72969B012007CA99F /* MainView.swift in Sources */,
 				F9A21D17296B968C003237E5 /* BottomNavigationView.swift in Sources */,
 				F91E692C28C6B61500E27F5A /* AppDelegate.swift in Sources */,
