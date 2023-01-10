@@ -25,6 +25,12 @@ public final class MainView: UIView {
         setupView()
     }
 
+    func updateViewState(canGoBack: Bool, canGoForward: Bool, isWebViewHidden: Bool) {
+        bottomNavigationView.backButton.isEnabled = canGoBack
+        bottomNavigationView.forwardButton.isEnabled = canGoForward
+        webView.isHidden = isWebViewHidden
+    }
+
     private func setupView() {
         searchBar.searchBar.delegate = self
         bottomNavigationView.backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
