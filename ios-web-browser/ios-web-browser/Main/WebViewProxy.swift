@@ -20,4 +20,12 @@ final class WebViewProxy: MainViewProtocol {
     func didTapForwardButton() {
         webView.goForward()
     }
+
+    func canGoBack() -> Bool {
+        webView.canGoBack
+    }
+
+    func canGoForward() -> Bool {
+        webView.canGoForward
+    }
 }
