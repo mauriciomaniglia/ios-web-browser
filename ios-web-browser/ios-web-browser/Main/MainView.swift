@@ -35,6 +35,8 @@ public final class MainView: UIView {
 
         backgroundColor = .systemGray4
         webView.isHidden = true
+        bottomNavigationView.backButton.isEnabled = false
+        bottomNavigationView.forwardButton.isEnabled = false
 
         setupConstraints()
     }
