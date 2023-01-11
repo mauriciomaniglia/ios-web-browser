@@ -27,6 +27,22 @@ class MainViewTests: XCTestCase {
 
         XCTAssertEqual(delegate.receivedMessages, [])
     }
+
+    func test_updateViewState_updatesViewElementsCorrectly() {
+        let sut = MainView()
+
+        sut.updateViewState(canGoBack: false, canGoForward: false, isWebViewHidden: false)
+
+        XCTAssertEqual(sut.bottomNavigationView.backButton.isEnabled, false)
+        XCTAssertEqual(sut.bottomNavigationView.forwardButton.isEnabled, false)
+        XCTAssertEqual(sut.webView.isHidden, false)
+
+        sut.updateViewState(canGoBack: true, canGoForward: true, isWebViewHidden: true)
+
+        XCTAssertEqual(sut.bottomNavigationView.backButton.isEnabled, true)
+        XCTAssertEqual(sut.bottomNavigationView.forwardButton.isEnabled, true)
+        XCTAssertEqual(sut.webView.isHidden, true)
+    }
     
     // MARK: - Helpers
     

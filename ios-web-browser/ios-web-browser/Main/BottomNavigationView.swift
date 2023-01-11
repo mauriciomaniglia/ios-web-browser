@@ -1,6 +1,6 @@
 import UIKit
 
-final class BottomNavigationView: UIView {
+public final class BottomNavigationView: UIView {
     let buttonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -8,11 +8,11 @@ final class BottomNavigationView: UIView {
         return stackView
     }()
 
-    let backButton = UIButton()
-    let forwardButton = UIButton()
-    let searchButton = UIButton()
-    let newTabButton = UIButton()
-    let settingsButton = UIButton()
+    public let backButton = UIButton()
+    public let forwardButton = UIButton()
+    public let searchButton = UIButton()
+    public let newTabButton = UIButton()
+    public let settingsButton = UIButton()
 
     convenience init() {
         self.init(frame: .zero)

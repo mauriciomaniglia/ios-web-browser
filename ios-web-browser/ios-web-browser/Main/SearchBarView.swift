@@ -1,6 +1,6 @@
 import UIKit
 
-final class SearchBarView: UIView {
+public final class SearchBarView: UIView {
     let searchBar: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = "Search or enter address"

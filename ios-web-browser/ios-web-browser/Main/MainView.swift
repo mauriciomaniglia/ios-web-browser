@@ -9,17 +9,16 @@ public protocol MainViewProtocol {
 
 public final class MainView: UIView {
     public var delegate: MainViewProtocol?
-
-    internal let searchBar = SearchBarView()
-    internal let webView = WKWebView()
-    internal let bottomNavigationView = BottomNavigationView()
+    public let searchBar = SearchBarView()
+    public let webView = WKWebView()
+    public let bottomNavigationView = BottomNavigationView()
 
     convenience init() {
         self.init(frame: .zero)        
         setupView()
     }
 
-    func updateViewState(canGoBack: Bool, canGoForward: Bool, isWebViewHidden: Bool) {
+    public func updateViewState(canGoBack: Bool, canGoForward: Bool, isWebViewHidden: Bool) {
         bottomNavigationView.backButton.isEnabled = canGoBack
         bottomNavigationView.forwardButton.isEnabled = canGoForward
         webView.isHidden = isWebViewHidden
