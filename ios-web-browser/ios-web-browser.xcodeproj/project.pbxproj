@@ -58,7 +58,6 @@
 		F9A21D12296B0AA9003237E5 /* MainComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainComposer.swift; sourceTree = "<group>"; };
 		F9A21D14296B0B54003237E5 /* WebViewProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewProxy.swift; sourceTree = "<group>"; };
 		F9A21D16296B968C003237E5 /* BottomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationView.swift; sourceTree = "<group>"; };
-		F9EE8DD628FF89FE009FFEE7 /* core-web-browser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "core-web-browser"; path = "../../core-web-browser"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +102,6 @@
 		F91E691F28C6B61500E27F5A = {
 			isa = PBXGroup;
 			children = (
-				F9EE8DD628FF89FE009FFEE7 /* core-web-browser */,
 				F91E692A28C6B61500E27F5A /* ios-web-browser */,
 				F91E694128C6B61700E27F5A /* ios-web-browserTests */,
 				F91E694B28C6B61700E27F5A /* ios-web-browserUITests */,
