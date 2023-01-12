@@ -1,4 +1,5 @@
 import UIKit
+import core_web_browser
 
 final class MainComposer {
     static func makeScreen() -> UIViewController {

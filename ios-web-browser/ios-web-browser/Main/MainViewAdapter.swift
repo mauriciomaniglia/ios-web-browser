@@ -1,3 +1,5 @@
+import core_web_browser
+
 final class MainViewAdapter: MainViewProtocol {
     let webViewProxy: WebViewProxy
     let mainView: MainView
