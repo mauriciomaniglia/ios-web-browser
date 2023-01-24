@@ -6,6 +6,7 @@ Web browser for iOS
 - Search bar ✅
 - Implement navigation (back / forward) ✅
 - Reload Page 🔨
+- Loading (progress bar)
 - Long-press (navigation)
 - Autocomplete suggestions
 - Check Site Protection
