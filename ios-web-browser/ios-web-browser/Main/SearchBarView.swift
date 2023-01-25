@@ -3,6 +3,7 @@ import UIKit
 public final class SearchBarView: UIView {
     let searchBar: UITextField = {
         let textfield = UITextField()
+        textfield.clearButtonMode = .whileEditing
         textfield.placeholder = "Search or enter address"
         return textfield
     }()
