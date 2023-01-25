@@ -1,6 +1,6 @@
 import core_web_browser
 
-final class MainViewAdapter: MainViewProtocol {
+final class MainViewAdapter {
     let webViewProxy: WebViewProxy
     let mainView: MainView
 
@@ -8,7 +8,9 @@ final class MainViewAdapter: MainViewProtocol {
         self.webViewProxy = webViewProxy
         self.mainView = mainView
     }
+}
 
+extension MainViewAdapter: MainViewProtocol {
     func sendText(_ text: String) {
         webViewProxy.sendText(text)
     }
@@ -18,7 +20,7 @@ final class MainViewAdapter: MainViewProtocol {
     }
 
     func didTapForwardButton() {
-        webViewProxy.didTapForwardButton()        
+        webViewProxy.didTapForwardButton()
     }
 }
 
