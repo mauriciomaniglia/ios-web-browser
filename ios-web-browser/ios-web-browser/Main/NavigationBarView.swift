@@ -1,6 +1,6 @@
 import UIKit
 
-public final class BottomNavigationView: UIView {
+public final class NavigationBarView: UIView {
     let buttonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal

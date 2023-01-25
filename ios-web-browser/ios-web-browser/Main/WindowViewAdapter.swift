@@ -1,16 +1,16 @@
 import core_web_browser
 
-final class MainViewAdapter {
+final class WindowViewAdapter {
     let webViewProxy: WebViewProxy
-    let mainView: MainView
+    let windowView: WindowView
 
-    init(webViewProxy: WebViewProxy, mainView: MainView) {
+    init(webViewProxy: WebViewProxy, windowView: WindowView) {
         self.webViewProxy = webViewProxy
-        self.mainView = mainView
+        self.windowView = windowView
     }
 }
 
-extension MainViewAdapter: MainViewProtocol {
+extension WindowViewAdapter: WindowViewProtocol {
     func sendText(_ text: String) {
         webViewProxy.sendText(text)
     }
@@ -24,9 +24,9 @@ extension MainViewAdapter: MainViewProtocol {
     }
 }
 
-extension MainViewAdapter: WebViewProxyProtocol {
+extension WindowViewAdapter: WebViewProxyProtocol {
     func didLoadPage() {
-        mainView.updateViewState(
+        windowView.updateViewState(
             canGoBack: webViewProxy.canGoBack(),
             canGoForward: webViewProxy.canGoForward(),
             isWebViewHidden: false)

@@ -1,17 +1,17 @@
 import UIKit
 import WebKit
 
-public protocol MainViewProtocol {
+public protocol WindowViewProtocol {
     func sendText(_ text: String)
     func didTapBackButton()
     func didTapForwardButton()
 }
 
-public final class MainView: UIView {
-    public var delegate: MainViewProtocol?
+public final class WindowView: UIView {
+    public var delegate: WindowViewProtocol?
     public let searchBar = SearchBarView()
     public let webView = WKWebView()
-    public let bottomNavigationView = BottomNavigationView()
+    public let bottomNavigationView = NavigationBarView()
 
     convenience init() {
         self.init(frame: .zero)        
@@ -73,7 +73,7 @@ public final class MainView: UIView {
     }
 }
 
-extension MainView: UITextFieldDelegate {
+extension WindowView: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text, !text.isEmpty else { return false }
         delegate?.sendText(text)

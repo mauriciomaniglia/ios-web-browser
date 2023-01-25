@@ -1,10 +1,10 @@
 import XCTest
 import ios_web_browser
 
-class MainViewTests: XCTestCase {
+class WindowViewTests: XCTestCase {
     func test_textFieldShouldReturn_sendsText() {
         let delegate = MainViewDelegateSpy()
-        let sut = MainView()
+        let sut = WindowView()
         sut.delegate = delegate
                 
         let textField = UITextField()
@@ -17,7 +17,7 @@ class MainViewTests: XCTestCase {
 
     func test_textFieldShouldReturn_whenTextIsEmptyDoNotSendText() {
         let delegate = MainViewDelegateSpy()
-        let sut = MainView()
+        let sut = WindowView()
         sut.delegate = delegate
 
         let textField = UITextField()
@@ -29,7 +29,7 @@ class MainViewTests: XCTestCase {
     }
 
     func test_updateViewState_updatesViewElementsCorrectly() {
-        let sut = MainView()
+        let sut = WindowView()
 
         sut.updateViewState(canGoBack: false, canGoForward: false, isWebViewHidden: false)
 
@@ -46,7 +46,7 @@ class MainViewTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private class MainViewDelegateSpy: MainViewProtocol {
+    private class MainViewDelegateSpy: WindowViewProtocol {
         enum Message: Equatable {
             case sendText(_ text: String)
             case didTapBackButton
