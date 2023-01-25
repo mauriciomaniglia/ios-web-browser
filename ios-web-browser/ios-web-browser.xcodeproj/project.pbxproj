@@ -87,11 +87,8 @@
 		F917D1FD2969B7B300123CE7 /* Window */ = {
 			isa = PBXGroup;
 			children = (
-				F96D12C62969B012007CA99F /* WindowView.swift */,
-				F917D1FE2969B86700123CE7 /* SearchBarView.swift */,
-				F9A21D12296B0AA9003237E5 /* WindowComposer.swift */,
-				F9A21D16296B968C003237E5 /* NavigationBarView.swift */,
-				F969A8DA296CEF1400A33E63 /* WindowViewAdapter.swift */,
+				F93065A42981F74E0015D757 /* Composition */,
+				F93065A32981F7470015D757 /* Views */,
 			);
 			path = Window;
 			sourceTree = "<group>";
@@ -143,6 +140,25 @@
 				F91E694E28C6B61700E27F5A /* ios_web_browserUITestsLaunchTests.swift */,
 			);
 			path = "ios-web-browserUITests";
+			sourceTree = "<group>";
+		};
+		F93065A32981F7470015D757 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F96D12C62969B012007CA99F /* WindowView.swift */,
+				F9A21D16296B968C003237E5 /* NavigationBarView.swift */,
+				F917D1FE2969B86700123CE7 /* SearchBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F93065A42981F74E0015D757 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				F9A21D12296B0AA9003237E5 /* WindowComposer.swift */,
+				F969A8DA296CEF1400A33E63 /* WindowViewAdapter.swift */,
+			);
+			path = Composition;
 			sourceTree = "<group>";
 		};
 		F972BCBD28D13C8500DEFDDF /* Resources */ = {
