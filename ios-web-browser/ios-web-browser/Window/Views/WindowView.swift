@@ -1,14 +1,9 @@
 import UIKit
 import WebKit
-
-public protocol WindowViewProtocol {
-    func sendText(_ text: String)
-    func didTapBackButton()
-    func didTapForwardButton()
-}
+import core_web_browser
 
 public final class WindowView: UIView {
-    public var delegate: WindowViewProtocol?
+    public var delegate: WindowViewContract?
     public let searchBar = SearchBarView()
     public let webView = WKWebView()
     public let bottomNavigationView = NavigationBarView()
@@ -18,10 +13,10 @@ public final class WindowView: UIView {
         setupView()
     }
 
-    public func updateViewState(canGoBack: Bool, canGoForward: Bool, isWebViewHidden: Bool) {
-        bottomNavigationView.backButton.isEnabled = canGoBack
-        bottomNavigationView.forwardButton.isEnabled = canGoForward
-        webView.isHidden = isWebViewHidden
+    public func updateViews(_ presentableModel: WindowPresentableModel) {
+        bottomNavigationView.backButton.isEnabled = presentableModel.canGoBack
+        bottomNavigationView.forwardButton.isEnabled = presentableModel.canGoForward
+        webView.isHidden = !presentableModel.showWebView
     }
 
     private func setupView() {
@@ -34,10 +29,6 @@ public final class WindowView: UIView {
         addSubview(bottomNavigationView)
 
         backgroundColor = .systemGray4
-        webView.isHidden = true
-        bottomNavigationView.backButton.isEnabled = false
-        bottomNavigationView.forwardButton.isEnabled = false
-
         setupConstraints()
     }
 
@@ -76,7 +67,7 @@ public final class WindowView: UIView {
 extension WindowView: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text, !text.isEmpty else { return false }
-        delegate?.sendText(text)
+        delegate?.didRequestSearch(text)
         return true
     }
 }
