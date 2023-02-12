@@ -28,7 +28,7 @@ public final class WindowView: UIView {
         addSubview(webView)
         addSubview(bottomNavigationView)
 
-        backgroundColor = .systemGray4
+        backgroundColor = .systemBackground
         setupConstraints()
     }
 

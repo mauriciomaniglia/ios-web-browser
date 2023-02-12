@@ -10,7 +10,7 @@ public final class SearchBarView: UIView {
 
     let searchBarContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray2
+        view.backgroundColor = .secondarySystemFill
         view.layer.cornerRadius = 10.0
         return view
     }()
