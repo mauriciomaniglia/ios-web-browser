@@ -1,5 +1,6 @@
 import XCTest
 import ios_web_browser
+import core_web_browser
 
 class WindowViewTests: XCTestCase {
     func test_textFieldShouldReturn_sendsText() {
@@ -12,7 +13,7 @@ class WindowViewTests: XCTestCase {
         
         _ = sut.textFieldShouldReturn(textField)
         
-        XCTAssertEqual(delegate.receivedMessages, [.sendText("http://some-website.com")])
+        XCTAssertEqual(delegate.receivedMessages, [.didRequestSearch("http://some-website.com")])
     }
 
     func test_textFieldShouldReturn_whenTextIsEmptyDoNotSendText() {
@@ -27,36 +28,30 @@ class WindowViewTests: XCTestCase {
 
         XCTAssertEqual(delegate.receivedMessages, [])
     }
-
-    func test_updateViewState_updatesViewElementsCorrectly() {
-        let sut = WindowView()
-
-        sut.updateViewState(canGoBack: false, canGoForward: false, isWebViewHidden: false)
-
-        XCTAssertEqual(sut.bottomNavigationView.backButton.isEnabled, false)
-        XCTAssertEqual(sut.bottomNavigationView.forwardButton.isEnabled, false)
-        XCTAssertEqual(sut.webView.isHidden, false)
-
-        sut.updateViewState(canGoBack: true, canGoForward: true, isWebViewHidden: true)
-
-        XCTAssertEqual(sut.bottomNavigationView.backButton.isEnabled, true)
-        XCTAssertEqual(sut.bottomNavigationView.forwardButton.isEnabled, true)
-        XCTAssertEqual(sut.webView.isHidden, true)
-    }
     
     // MARK: - Helpers
     
-    private class MainViewDelegateSpy: WindowViewProtocol {
+    private class MainViewDelegateSpy: WindowViewContract {
         enum Message: Equatable {
-            case sendText(_ text: String)
+            case didRequestSearch(_ text: String)
+            case didStartTyping
+            case didEndTyping
             case didTapBackButton
             case didTapForwardButton
         }
 
         var receivedMessages = [Message]()
 
-        func sendText(_ text: String) {
-            receivedMessages.append(.sendText(text))
+        func didRequestSearch(_ text: String) {
+            receivedMessages.append(.didRequestSearch(text))
+        }
+
+        func didStartTyping() {
+            receivedMessages.append(.didStartTyping)
+        }
+
+        func didEndTyping() {
+            receivedMessages.append(.didEndTyping)
         }
 
         func didTapBackButton() {
