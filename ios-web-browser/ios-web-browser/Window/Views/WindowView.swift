@@ -20,7 +20,7 @@ public final class WindowView: UIView {
     }
 
     private func setupView() {
-        searchBar.searchBar.delegate = self
+        searchBar.searchTextField.delegate = self
         bottomNavigationView.backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         bottomNavigationView.forwardButton.addTarget(self, action: #selector(didTapForwardButton), for: .touchUpInside)
 

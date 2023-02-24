@@ -1,7 +1,7 @@
 import UIKit
 
 public final class SearchBarView: UIView {
-    let searchBar: UITextField = {
+    let searchTextField: UITextField = {
         let textfield = UITextField()
         textfield.clearButtonMode = .whileEditing
         textfield.placeholder = "Search or enter address"
@@ -21,13 +21,13 @@ public final class SearchBarView: UIView {
     }
 
     private func setupView() {
-        searchBarContainer.addSubview(searchBar)
+        searchBarContainer.addSubview(searchTextField)
         addSubview(searchBarContainer)
         setupConstraints()
     }
 
     private func setupConstraints() {
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
         searchBarContainer.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
@@ -35,9 +35,9 @@ public final class SearchBarView: UIView {
             searchBarContainer.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             searchBarContainer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 
-            searchBar.heightAnchor.constraint(equalToConstant: 40),
-            searchBar.leadingAnchor.constraint(equalTo: searchBarContainer.leadingAnchor, constant: 10),
-            searchBar.trailingAnchor.constraint(equalTo: searchBarContainer.trailingAnchor)
+            searchTextField.heightAnchor.constraint(equalToConstant: 40),
+            searchTextField.leadingAnchor.constraint(equalTo: searchBarContainer.leadingAnchor, constant: 10),
+            searchTextField.trailingAnchor.constraint(equalTo: searchBarContainer.trailingAnchor)
         ])
     }
 }
