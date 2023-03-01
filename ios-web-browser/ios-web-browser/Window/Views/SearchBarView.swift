@@ -8,6 +8,12 @@ public final class SearchBarView: UIView {
         return textfield
     }()
 
+    let progressView: UIProgressView = {
+        let progressView = UIProgressView()
+        progressView.isHidden = true
+        return progressView
+    }()
+
     let searchBarContainer: UIView = {
         let view = UIView()
         view.backgroundColor = .secondarySystemFill
@@ -22,6 +28,7 @@ public final class SearchBarView: UIView {
 
     private func setupView() {
         searchBarContainer.addSubview(searchTextField)
+        searchBarContainer.addSubview(progressView)
         addSubview(searchBarContainer)
         setupConstraints()
     }
@@ -29,6 +36,7 @@ public final class SearchBarView: UIView {
     private func setupConstraints() {
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
         searchBarContainer.translatesAutoresizingMaskIntoConstraints = false
+        progressView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             searchBarContainer.heightAnchor.constraint(equalToConstant: 40.0),
@@ -37,7 +45,12 @@ public final class SearchBarView: UIView {
 
             searchTextField.heightAnchor.constraint(equalToConstant: 40),
             searchTextField.leadingAnchor.constraint(equalTo: searchBarContainer.leadingAnchor, constant: 10),
-            searchTextField.trailingAnchor.constraint(equalTo: searchBarContainer.trailingAnchor)
+            searchTextField.trailingAnchor.constraint(equalTo: searchBarContainer.trailingAnchor),
+
+            progressView.heightAnchor.constraint(equalToConstant: 2),
+            progressView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            progressView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            progressView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

@@ -17,6 +17,12 @@ public final class WindowView: UIView {
         bottomNavigationView.backButton.isEnabled = presentableModel.canGoBack
         bottomNavigationView.forwardButton.isEnabled = presentableModel.canGoForward
         webView.isHidden = !presentableModel.showWebView
+
+        if let currentProgress = presentableModel.progressBar {
+            searchBar.progressView.setProgress(Float(currentProgress), animated: true)
+        } else {
+            searchBar.progressView.isHidden = true
+        }
     }
 
     private func setupView() {
