@@ -26,6 +26,19 @@ public final class SearchBarView: UIView {
         setupView()
     }
 
+    func showLoadingProgress(_ value: Double?) {
+        if let currentProgress = value {
+            progressView.isHidden = false
+            progressView.setProgress(Float(currentProgress), animated: true)
+
+            if currentProgress == 1.0 {
+                progressView.isHidden = true
+            }
+        } else {
+            progressView.isHidden = true
+        }
+    }
+
     private func setupView() {
         searchBarContainer.addSubview(searchTextField)
         searchBarContainer.addSubview(progressView)
