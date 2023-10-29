@@ -1,18 +1,22 @@
 import UIKit
-import WebKit
 import core_web_browser
 
 public final class WindowView: UIView {
     public var delegate: WindowViewContract?
     public let searchBar = SearchBarView()
-    public let webView = WKWebView()
+    public let webView: UIView
     public let bottomNavigationView = NavigationBarView()
 
-    convenience init() {
-        self.init(frame: .zero)        
+    public init(webView: UIView) {
+        self.webView = webView
+        super.init(frame: .zero)
         setupView()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public func updateViews(_ presentableModel: WindowPresentableModel) {
         bottomNavigationView.backButton.isEnabled = presentableModel.canGoBack
         bottomNavigationView.forwardButton.isEnabled = presentableModel.canGoForward
