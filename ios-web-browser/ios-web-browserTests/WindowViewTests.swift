@@ -4,10 +4,8 @@ import core_web_browser
 
 class WindowViewTests: XCTestCase {
     func test_textFieldShouldReturn_sendsText() {
-        let delegate = MainViewDelegateSpy()
-        let sut = WindowView()
-        sut.delegate = delegate
-                
+        let (sut, delegate) = makeSUT()
+
         let textField = UITextField()
         textField.text = "http://some-website.com"
         
@@ -17,10 +15,8 @@ class WindowViewTests: XCTestCase {
     }
 
     func test_textFieldShouldReturn_whenTextIsEmptyDoNotSendText() {
-        let delegate = MainViewDelegateSpy()
-        let sut = WindowView()
-        sut.delegate = delegate
-
+        let (sut, delegate) = makeSUT()
+        
         let textField = UITextField()
         textField.text = ""
 
@@ -30,7 +26,15 @@ class WindowViewTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    
+
+    private func makeSUT() -> (sut: WindowView, delegate: MainViewDelegateSpy) {
+        let delegate = MainViewDelegateSpy()
+        let sut = WindowView(webView: UIView())
+        sut.delegate = delegate
+
+        return (sut, delegate)
+    }
+
     private class MainViewDelegateSpy: WindowViewContract {
         enum Message: Equatable {
             case didRequestSearch(_ text: String)

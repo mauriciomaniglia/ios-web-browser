@@ -3,11 +3,11 @@ import core_web_browser
 
 final class WindowComposer {
     static func makeScreen() -> UIViewController {
-        let windowView = WindowView()
         let windowViewController = UIViewController()
-        let webViewProxy = WebViewProxy(webView: windowView.webView)
+        let webViewProxy = WebViewProxy()
+        let windowView = WindowView(webView: webViewProxy.webView)
         let presenter = WindowPresenter()
-        let windowViewAdapter = WindowViewAdapter(webViewProxy: webViewProxy, presenter: presenter)
+        let windowViewAdapter = WindowViewAdapter(webView: webViewProxy, presenter: presenter)
 
         windowViewController.view = windowView
         windowView.delegate = windowViewAdapter
