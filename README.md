@@ -1,5 +1,5 @@
 # ios-web-browser
-Web browser for iOS
+Web browser for iOS (UIKit)
 
 ## Building the code
 
